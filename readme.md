@@ -20,5 +20,5 @@ I’m exploring topics like **variables, loops, functions, and more** while buil
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/anmol11p/<your-repo-name>.git
+   git clone https://github.com/anmol11p/python.git
    ```
