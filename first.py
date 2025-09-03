@@ -21,14 +21,14 @@
 # outer() 
 
 
-class college():
-    collegename="Jb knowledge park"
-    def __init__(self,name,age):
-        self.name=name  #instance variable
-        self.age=age    #instance variable  
+# class college():
+#     collegename="Jb knowledge park"
+#     def __init__(self,name,age):
+#         self.name=name  #instance variable
+#         self.age=age    #instance variable  
 
-student1=college("anmol",23)
-student2=college("anubhav",21)
+# student1=college("anmol",23)
+# student2=college("anubhav",21)
 
 # print(student1.name,student1.age)
 # print(student1.collegename)
@@ -1011,18 +1011,172 @@ new_list=[40,1,2,20]
 
 #>>===========hw===================<<
 
-string =".isalphac1" # .1cahplasi
-# string ="a.byc3" # 3.cyba
-string_list=list(string)
-# for i in range(length):
-i=0
-length=len(string_list)
-while(i<length):
-    if string_list[i]!='.':
-        string_list[i],string_list[length-1]=string_list[length-1],string_list[i]
-        length-=1
-        i+=1
-    else:
-        i+=1  
-expected_string="".join(string_list)          
-print(expected_string)    
+# string =".isalphac1" # .1cahplasi
+# # string ="a.byc3" # 3.cyba
+# string_list=list(string)
+# # for i in range(length):
+# i=0
+# length=len(string_list)
+# while(i<length):
+#     if string_list[i]!='.':
+#         string_list[i],string_list[length-1]=string_list[length-1],string_list[i]
+#         length-=1
+#         i+=1
+#     else:
+#         i+=1  
+# expected_string="".join(string_list)          
+# print(expected_string)    
+
+
+
+#*==================== 2/09/2025========================
+
+#!Dictionary
+
+# key-->unique
+# value-->can repeat
+# define {} or dict()
+
+#? name roll_number
+
+# dictionary={"name":"Anmol","roll_number":23}
+
+# for key in dictionary:
+#     print(f"{key}: {dictionary[key]}")
+
+#! set
+
+SET={1,2,3}
+# SET2={3,4,5}
+# # print(SET | SET2) #union
+# # print(SET & SET2) #intersection
+# print (SET-SET2) #difference-> 1,2
+# # print(SET ^ SET2) #intersection ko hatake sara dedega
+
+
+# #?issubset disjoint 
+# A = {1, 2}
+# B = {1, 2, 3}
+
+
+#!pattern
+# n=int(input("enter number: "))
+# for i in range(n):
+#     for j in range(n):
+#         print("*",end=" ")   
+#     print()  
+
+#? triangle 
+# n=int(input("enter number: "))
+# for i in range(n):
+#     for j in range(i+1):
+#         print("*",end="")
+#     print()    
+
+
+#*==============  3/09/2025============================
+
+#! OOPS
+
+# class Student:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+
+
+# student1=Student("anmol",23) #constructor called
+# print(student1.age)
+# print(student1.name)
+
+
+
+#? question
+
+# def get_length_marks(marks):
+#     total=0
+#     length=0
+#     for mark in marks:
+#         total+=mark
+#         length+=1
+#     return total,length    
+
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+#     def average(self):
+#         total,length=get_length_marks(self.marks)
+#         average=total/length
+#         return average
+# s1=Student("anmol",[20,30,40])
+# print(s1.average())
+
+# !encapsulation
+# class userAuthentication:
+#     def __init__(self,username,password):
+#         self.username=username
+#         self.__password=password #private,access modifier
+#     def set_password(self,password):
+#         self.__password=password    
+#     def get_user(self):
+#         return f"user= {self.username} password= {self.__password}"
+
+# user1=userAuthentication("anmol",123456789)
+# # password change
+# user1.set_password("Anmol0031@")
+# print(user1.get_user())
+
+#!Inheritance 
+
+#? single inheritance 
+# class Animal:
+#     def speak(self):
+#         return 'animal can speak'
+#     def tail(self):
+#         return 'animal has tail'
+
+# class dog(Animal):
+#     def bark(self):
+#         return 'dog is barking'
+
+# d1=dog()
+# # print(d1.bark())#own method        
+# print(d1.speak())#parent method        
+
+#? multilevel inheritance 
+# class Animal:
+#     def speak(self):
+#         return 'animal can speak'
+#     def tail(self):
+#         return 'animal has tail'
+
+# class cow(Animal):
+#     def tail(self):
+#         return 'cow has tail'
+
+# class jersey(cow):
+#     def breed(self):
+#         return 'jersey is a breed of cow'
+
+# j1=jersey()
+# print(j1.breed())#own method        
+# print(j1.tail())#cow        
+# print(j1.speak())#animal
+
+#? Multiple inheritance
+# * child have multiple parent*
+
+# class Mother:
+#     def skills(self):
+#         print('mother: cooking')
+# class Father:
+#     def skills(self):
+#         print('father: gardening')
+# class Child:
+#     def skills(self):
+#         print('child: Coding')
+# c = Child()
+# c.skills()    #overrides the parent     
+
+#? Hierarchical inheritance
+#* Same parent to all the subclasses ,such that all are sibling *#
