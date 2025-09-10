@@ -1180,3 +1180,115 @@ SET={1,2,3}
 
 #? Hierarchical inheritance
 #* Same parent to all the subclasses ,such that all are sibling *#
+
+# * ==================== 4/09/2025========================================
+
+#! polymorphism
+# method overriding
+
+# class Vehicle:
+#     def run(self):
+#         print("vehicle run")
+# class Car(Vehicle):
+#     def run(self):
+#         print("car run")
+# class Bike(Vehicle):
+#     def run(self):
+#         print("bike run")
+
+# def make_run(vehicle):
+#     vehicle.run()
+# B1=Bike()
+# C1=Car()
+# make_run(B1)
+# make_run(C1)
+
+
+#? operator overloading 
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+
+#     def __add__(self, other):
+#         # Overloads the + operator for Point objects
+#         return Point(self.x + other.x, self.y + other.y)
+
+#     def __str__(self):
+#         # Defines the string representation
+#         return f"Point({self.x}, {self.y})"
+
+# p1 = Point(1, 2)
+# p2 = Point(3, 4)
+# p3 = p1 + p2  # Uses the overloaded __add__ method
+# print(p3)      # Uses the overloaded __str__ method
+
+
+# * =============== 8/09/2025 ==========================
+
+# #? Abstraction
+
+# from abc import ABC, abstractmethod
+# class abstractParent(ABC):
+#     @abstractmethod
+#     def show(self): #jitne bhhi abstract methiod honge unhe body provide karani padegi
+#         pass
+
+# class abstractChild(abstractParent):
+#     def show(self):
+#         print ("show")
+
+# child=abstractChild()
+# child.show()
+# parent=abstractParent() #* Can't instantiate abstract class abstractParent without an implementation for abstract method 'show'
+
+
+#! 2 question
+    #? Write a program that prevents direct object creation of an abstract class Appliance
+    #? Create subclasses WashingMachine and Refrigerator that implement methods like turn_on() and turn_off().
+''' 
+from abc import ABC,abstractmethod
+class Appliance(ABC):
+    @abstractmethod
+    def turn_on(self):
+        pass
+    @abstractmethod
+    def turn_off(self):
+        pass
+class Refrigerator(Appliance):
+    def turn_on(self):
+        print("refrigerator turn on")        
+    def turn_off(self):
+        print("refrigerator turn off")        
+class WashingMachine(Appliance):
+    def turn_on(self):
+        print("Washing Machine turn on")        
+    def turn_off(self):
+        print("Washing Machine turn off")    
+'''    
+
+# wm=WashingMachine()
+# wm.turn_on()
+# wm.turn_off()
+#* ================== 9/09/2025 ============================ 
+
+# a=int(input("Enter first number: "))
+# b=int(input("Enter second number: "))
+# try:
+#     output=a/b
+# except Exception as e:
+#     print(f" you can't divide {a} by 0")
+
+#! handling multiple exception 
+
+# try:
+#     output=10/0
+# except Exception as e:
+#     print(f" you can't divide  by 0")
+
+# else:
+#     print("else")
+# finally:
+#     print("finally!")
+
