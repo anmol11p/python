@@ -1292,3 +1292,447 @@ class WashingMachine(Appliance):
 # finally:
 #     print("finally!")
 
+#* ============ 10/09/2025=========== 
+# for i in range(3):
+#     for j in range(3):
+#         print(f"i {i} j{j}")
+
+
+#? right triangle 
+# n=4
+# for i in range(n+1):
+#     for j in range(i):
+#         print("*",end=' ')
+#     print()    
+
+#? inverse right triangle
+# ****
+# ***
+# **
+# *
+
+# n=4
+# i=n
+# while i>0:
+#     for j in range(i):
+#         print("*",end="")
+#     print()    
+#     i-=1    
+
+#?
+# 1
+# 12
+# 121
+# 1212
+# for i in range(1,5):
+#     for j in range(i):
+#         if j%2==0:
+#             print(1,end="")
+#         else:
+#             print(2,end="")      
+#     print()        
+
+# ? 
+# 1
+# 23
+# 456
+# 78910
+
+# num=1
+# for i in range(1,5):
+#     for j in range(i):
+#         print(num,end=" ") 
+#         num+=1   
+#     print()  
+
+#! 
+# 1
+# 21
+# 121
+
+#! space
+#    *
+#   **
+#  ***     
+    
+#! when will  finally not execute>>>>>>
+    #? infinite loop
+    #? os.exit(0)
+    #? exception ko galat leliya toh 
+
+
+#* ======================12/09/2025==================
+#raise
+# In Python, raise is used to manually trigger an exception (error).
+# class UnderAgeError(Exception):
+#     pass
+# age=-5
+# try:
+#     if age<18:
+#         raise UnderAgeError("You can't vote")
+#     elif age<0:
+#         raise UnderAgeError("age can't be negative")
+# except UnderAgeError as value:
+#     print(value)
+
+
+#! 7 division Error
+
+# class SevendivisionError(Exception):
+#     pass
+
+# try:
+#     number=8
+#     if number %7 != 0:
+#         raise SevendivisionError("7 d e")
+#     else:
+#         print('perfect')    
+# except SevendivisionError as e:
+#     print(e)        
+
+#! invalid integer input error 
+
+# try:
+#     userInput=int(input("enter number: ")) 
+#     print('you enter',userInput)
+# except ValueError as val:
+#     print(val)    
+
+
+#* ==================== 16/09/2025========================
+# crud in file 
+
+# file = open('demo.txt', 'w')
+# file.write("i am anmol panday")
+# file.close()
+
+
+# with open('demo.txt', 'r') as file:
+#     print(file.read())
+
+
+# for automatically close the file
+#? with open('C:/Users/Administrator/Downloads/google oath.txt', 'r') as file:
+    #? one by one 
+    # print(file.readline())
+
+    #? complete 
+    # content=file.read()
+    # for line in content:
+    #     print(line)
+
+
+#? for append (last data not changed)
+# with open('demo.txt','a') as file:
+#     file.write("hii")
+     
+
+
+#? problem
+with open("practice.txt",'w') as file:
+    file.write('hello Everyone we are learning File/io using java i like programming in java ')
+#** replace all occurence of java witth python
+
+# with open("practice.txt", 'r') as file:
+#     content = file.read()
+
+# content = content.replace("java", "python")  
+# with open('practice.txt', 'w') as file2:
+#     file2.write(content)
+
+
+#* search if programming is present here or not
+
+# with open('practice.txt','r') as file:
+#     content =file.read()
+#     if not content.find('programming')== -1:
+#         print('present')
+#     else:
+#         print("absent")    
+
+
+#* ==================== 17/09/2025==============================
+
+# square=[]
+# for num in range(1,11):
+#     square.append(num**2)
+
+# print(square)
+
+
+#? by list comprehension
+# new_square=[num**2 for num in range(1,11)]
+# print(new_square)
+
+#* list of even number in list 
+
+# list_even=[num for num in range(1,11) if num%2==0]
+# print(list_even)
+
+
+#?ternary operator
+
+#! Even or Odd
+
+# results=["even" if num%2==0 else "odd" for num in range(1,11)]
+# print(results)
+
+#! Replace negative numbers with 0
+# nums = [-3, -1, 0, 2, 5]
+# results=[0 if num<0 else num for num in nums]
+# print(results)
+
+
+# * ================================= 18/09/2025==========================
+# 1-8 table by list comprehension
+
+# table=[]
+# for num in range(1,9):
+#     subTable=[]
+#     for num2 in range(1,11):
+#         subTable.append(num2*num)
+#     table.append(subTable)    
+# print(table)
+
+
+# table=[[num*i for i in range(1,11) ] for num in range(1,9)]
+# print(table)
+
+
+
+# arr=[[1,2,3],
+#      [4,5,6],
+#      [7,8,9],
+#      [10,11,12]
+#      ]
+
+# new_arr=[]
+# for sublist in arr:
+#     for elem in sublist:
+#         new_arr.append(elem)
+# print(new_arr)        
+
+
+
+# print("======================using list comprehension=================================")
+
+# arr=[[1,2,3],
+#      [4,5,6],
+#      [7,8,9],
+#      [10,11,12]
+#      ]
+
+# emp_arr=[elem for sublist in arr for elem in sublist]
+# # emp_arr=[elem**2 for sublist in arr for elem in sublist]
+# print(emp_arr)
+
+
+
+#* Dictionary comprehension
+
+
+#!first unique/non repeating 
+# string="swiss"
+
+# for char in range(len(string)):
+#     unique=""
+#     isUnique=True
+#     for j in range(len(string)):
+#         if(char != j and string[j] == string[char] ):
+#             isUnique=False
+#             break
+#     if isUnique:
+#         print(string[char])
+#         break
+
+
+# *=================================19/09/2025=====================================
+
+#!by dictionary   
+# string="swiss"
+# freq={}
+
+# for s in string:
+#     freq[s]=freq.get(s,0)+1
+
+# print(freq)    
+
+
+
+#?
+# l1=[1,3,5,6]
+# l2=[2,4,7,8]
+# print(sorted(l1+l2))
+
+import sys
+def list_one_to_1000():
+    return [i for i in range(1001)]
+lst = list_one_to_1000()    
+# print(sys.getsizeof(lst)) #8856
+# print(len(lst))           #1001
+
+
+# generator
+'''
+    def list_one_to_1000():
+        i=1
+        while i<1001:
+            yield i
+            i+=1
+
+
+    gen = list_one_to_1000()
+    print(sys.getsizeof(gen)) #184
+'''
+#! yield is like a pause-and-resume button for a function.
+#! Instead of returning all results at once, it produces values one by one when you loop through it (or call next() on it).
+
+
+#* =================== 22/09/2025============================= 
+#? fibonacci series
+
+# def fib(n):
+#     a=0
+#     b=1
+#     print(a,end=" ")
+#     for i in range(2,n):
+#         next_= a+b 
+#         print(next_,end=" ")
+#         a=b
+#         b=next_
+# fib(10)
+
+
+#? with generator 
+# def fib(n):
+#     a=0
+#     b=1
+#     i=0
+#     while i<n:
+#         yield a
+#         a,b=b,a+b
+#         i+=1
+
+# for num in fib(5):
+#     print(num)
+
+
+#? list comprehension with generator 
+
+#* gen=(i for i in range(11))
+#* print(gen)
+#* for i in gen:
+#*     print(i)
+
+#? tuple comprehension
+# tup=tuple(i for i in range(11))
+# print(tup)
+
+ 
+# ? how to check element is iterable or not
+from collections.abc import Iterable
+nums=[1,2,3]
+# print(Iterable)
+# print(isinstance(nums,Iterable))
+
+#! internal working of iterator
+# nums = iter(nums)  # convert the list into an iterator
+
+# try:
+#     while True:
+#         print(next(nums))
+# except Exception as e:
+#     # print(e) #print empty space
+#     print("Iteration has ended!") 
+
+
+#! implement my range own 
+# class Myrange():
+#     def __init__(self,curr,end):
+#         self.curr=curr
+#         self.end=end 
+#     # def __iter__(self):
+#     #     return self
+#     def __next__(self):
+#         if self.curr>=self.end:
+#             raise StopIteration
+#         value=self.curr
+#         self.curr+=1
+#         return value        
+
+
+# obj=Myrange(1,5)
+# print(obj.__next__())
+# print(obj.__next__())
+# print(obj.__next__())
+# print(obj.__next__())
+# print(obj.__next__())
+# print(obj.__next__())
+
+# for i in Myrange(1, 5):
+#     print(i)
+
+
+
+#? Decorator-pdna hai and all thing revise
+#* ================= 25/09/2025===========================
+
+# def timer(x):
+#     def decorator(func):
+#         def wrapper():
+#             for i in range(x):
+#                 func()
+#         return wrapper
+#     return decorator
+# @timer(5)
+# def greet():
+#     print('hello,i am anmol')   
+# greet()                 
+
+        
+
+#! dunder function 
+# class Student():
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def __str__(self):
+#         return f"{self.name} {self.age}"
+#     def __len__(self):
+#         return self.age    
+# std=Student("anmol",23)
+# print(len(std))        
+
+
+#* important 
+# class Adder():
+#     def __init__(self,a,b):
+#         self.a=a 
+#         self.b=b 
+#     def __add__(self,other):
+#         return Adder(self.a+other.a,self.b+other.b)
+#     def __repr__(self):
+#         return f"Adder(a={self.a}, b={self.b})"
+
+
+
+
+# a1=Adder(10,20)
+# a2=Adder(20,40)
+# a3=a1+a2
+# print(a3)
+
+
+class Imag:
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def __add__(self,other):
+        return Imag(self.a+other.a,self.b+other.b)
+    def __repr__(self):
+        return f"a={self.a}i b={self.b}"
+c1 = Imag(5, 3j) 
+c2 = Imag(2, 9j)
+c3 = c1 + c2
+print(c3)        
+
