@@ -1675,6 +1675,23 @@ nums=[1,2,3]
 
 
 #? Decorator-pdna hai and all thing revise
+# it allow you to modify the behaviour of function and methods
+
+def greet(fx):
+    print("good morning")
+    fx()
+    print("thanks for using this function")
+
+# def hello():
+#     print("helloworld!")
+#? hello=greet(hello) #decorator called
+# print(hello)
+#! also 
+#? @greet #decorator called
+# def hello():
+#     print("helloworld!")
+
+
 #* ================= 25/09/2025===========================
 
 # def timer(x):
@@ -1723,16 +1740,199 @@ nums=[1,2,3]
 # print(a3)
 
 
-class Imag:
-    def __init__(self,a,b):
-        self.a=a
-        self.b=b
-    def __add__(self,other):
-        return Imag(self.a+other.a,self.b+other.b)
-    def __repr__(self):
-        return f"a={self.a}i b={self.b}"
-c1 = Imag(5, 3j) 
-c2 = Imag(2, 9j)
-c3 = c1 + c2
-print(c3)        
+# class Imag:
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#     def __add__(self,other):
+#         return Imag(self.a+other.a,self.b+other.b)
+#     def __str__(self):
+#         return f"({self.a}i+{self.b})"
+# c1 = Imag(5, 3j) 
+# c2 = Imag(2, 9j)
+# c3 = c1 + c2
+# print(c3) 
 
+
+'''
+# class Student:
+#     def __init__(self,name,rollno):
+#         self.name=name
+#         self.rollno=rollno
+    # def equal(self,other):
+    #     return self.name==other.name and self.rollno==other.rollno
+
+    # def __eq__(self,other):
+    #     return self.name==other.name and self.rollno==other.rollno
+
+#     def __gt__(self,other):
+#         return self.rollno>other.rollno
+        
+        
+
+# s1=Student("anmol",22)
+# s2=Student("anmol",21)
+# # print(s1.equal(s2))
+# print(s1>s2)
+'''
+
+
+# import math
+# print(math.pi)
+# print(math.sqrt(16))
+
+# from math import sqrt,pow,pi
+# print(pi)
+# print(sqrt(16))
+# print(pow(2,3))
+
+# from module import greet,add
+# print(greet())
+# print(add(50,60))
+
+
+
+# import os
+
+#? print(os.getcwd()) # C:\Users\Administrator\Anudip_Python
+#? print(os.listdir()) # ['.git', '.vscode', 'dehradun company practice.py', 'demo.txt', 'first.py', 'lab.py', 'lab2.py', 'lab3.py', 'module.py', 'practice.py', 'practice.txt', 'python', 'readme.md', '__pycache__']
+
+# os.mkdir("hello") if not "hello" in os.listdir() else print("already existed")
+
+
+# know about sys module 
+
+
+# * ==============================30/9/025================================
+# class Student:
+#     def __init__(self,sub1,sub2,sub3):
+#         self.sub1=sub1
+#         self.sub2=sub2
+#         self.sub3=sub3
+#     @property
+#     def percentage(self):
+#         return (self.sub1+self.sub2+self.sub3)/3
+
+
+# s1=Student(90,91,95)
+# print(s1.percentage)
+# s1.sub2=85
+# print(s1.percentage)
+        
+
+
+#! print the first 10 natural numbers using for loop
+
+# for i in range(11):
+#     print(i) 
+
+
+#! python program to check if the given string is a palindrome
+
+# def isPalindrome(input):
+#     reverse=""
+#     for i in input:
+#         reverse=i+reverse
+#     if reverse==input:
+#         return True
+#     else:
+#         return False
+# string="madam"
+# print(isPalindrome(string))
+
+
+#! python program to check if a given number is an Armstrong number 
+# def isArmstrong(num):
+#     # length of number
+#      length=0
+#      individual=[]
+#      actual_num=num
+#      while num!=0:
+#          reminder=num%10
+#          num=num//10
+#          length+=1
+#          individual.append(reminder)  
+
+#      total_sum=0
+#      for i in individual:
+#          total_sum+=i**length
+#      if total_sum==actual_num:
+#          return True
+#      else:
+#          return False    
+
+# num=153
+# print(isArmstrong(num))
+
+
+#! python program to get the fibonacci series b/w 0 to 50
+
+# def getfibonacci(number):
+#     first=0
+#     second=1
+#     print(first,second,end=" ")
+#     while True:
+#         next_num=first+second
+#         if next_num>50:
+#             break
+#         print(next_num,end=" ")    
+#         first=second
+#         second=next_num
+        
+
+        
+
+# number=50
+# getfibonacci(number)
+
+
+
+#!python prgm to check the validity of password input by users
+
+
+class passwordException(Exception):
+    pass
+
+def isValid(pswrd):
+    isSymbol=False
+    isUpperCase=False
+    isLowerCase=False
+    isNumeric=False
+    isLengthgt6=True if len(pswrd)>6 else False
+
+    try:
+        for i in pswrd:
+            #? uppercase 
+            if  65<=ord(i)<=90:
+                isUpperCase=True
+
+            #? lowercase 
+            if 97<=ord(i)<=122:
+                isLowerCase=True
+
+            #? numbers 
+            if 48<=ord(i)<=57:
+                isNumeric=True
+
+            #? symbol 
+            if not (65<=ord(i)<=90 or 97<=ord(i)<=122 or 48<=ord(i)<=57):
+                isSymbol=True 
+        if not isUpperCase:
+            raise passwordException("atleast one uppercase")
+        if not isLowerCase:
+            raise passwordException("atleast contain one lowerdcase")
+        if not isNumeric:
+            raise passwordException("atleast containe one numberic value")
+        if not isSymbol:
+            raise passwordException("atleast contain one special character")
+        if not isLengthgt6:
+            raise passwordException("password length should be greater than 6")
+        
+        if (isUpperCase and isLowerCase and isNumeric and isSymbol and isLengthgt6):
+            return "yes, it is a valid password"
+    except passwordException as e:
+        print(e)
+
+
+password=input("Enter password: ")
+isValid(password)

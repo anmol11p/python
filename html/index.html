@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My web page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        font-family: "Poppins", sans-serif;
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        place-items: center;
+        height: 60vh;
+      }
+      form {
+        border-radius: 20px;
+        transition: all 0.5s;
+        padding: 20px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        &:hover {
+          box-shadow: 0 8px 20px rgba(100, 149, 237, 0.25);
+          transform: translateY(-8px);
+        }
+      }
+
+      input {
+        padding: 0 10px;
+        border: none;
+        border-bottom: 1px dashed black;
+        &:focus {
+          outline: none;
+        }
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        background-color: transparent;
+        &:hover {
+          color: white;
+          cursor: pointer;
+          border: 1px solid white;
+          background-color: #0000ff;
+        }
+      }
+      select {
+        border: none;
+        border: 1px dashed;
+        &:focus {
+          outline: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <!-- <b>hii</b>
+      <small>Anmol</small>
+      <i>anmol</i>
+      <u>anmol</u>
+      <strike>hey</strike>
+      <tt>anmol</tt>
+      <big>J</big>
+      <del>hii</del>
+      <ins>hey</ins> -->
+    </p>
+
+    <!-- <img
+      src="https://media.istockphoto.com/id/1796374503/photo/the-lion-king.jpg?s=612x612&w=0&k=20&c=wDcyZj9yM1-7cCahtCn1SWnu_DGJsOHzlqWt6SSllzU="
+      alt="lion image"
+      width="400"
+      height="400"
+      style="border-radius: 50%"
+    /> -->
+    <form action="">
+      <h2 style="text-align: center">Registration Form</h2>
+      <table>
+        <tr>
+          <td>
+            <label for="name"> Name: </label>
+          </td>
+          <td>
+            <input type="text" placeholder="john doe ..." />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email"> Email: </label>
+          </td>
+          <td>
+            <input type="email" placeholder="pqr@gmail.com" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password"> Password: </label></td>
+          <td>
+            <input type="password" placeholder="***************" />
+          </td>
+        </tr>
+        <tr>
+          <td><label>Gender:</label></td>
+          <td>
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>City:</label>
+          </td>
+          <td>
+            <select name="" id="">
+              <option value="">Select City</option>
+              <option value="">Mumbai</option>
+              <option value="">Delhi</option>
+              <option value="">Gurugram</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button>Register now</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
